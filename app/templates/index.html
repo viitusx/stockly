@@ -1,15 +1,9 @@
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StockFlow | Sistema de Estoque</title>
-</head>
-<body>
-    <h1>StockFlow</h1>
+{% block content %}
+    <h1>Bem-vindo ao Stockly!</h1>
     <p>Sistema de gerenciamento de estoque.</p>
 
-    <p>Aplicação iniciada com sucesso!</p>
-</body>
-</html>
+    <a href="{{ url_for('auth.login') }}">Entrar</a>
+    <a href="{{ url_for('auth.register') }}">Criar conta</a>
+{% endblock %}

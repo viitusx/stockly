@@ -1,0 +1,16 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Entrar no Stockly</h1>
+
+<form method="POST">
+    <input type="email" name="email" placeholder="E-mail" required>
+
+    <input type="password" name="password" placeholder="Senha" required>
+
+    <button type="submit">Entrar</button>
+</form>
+
+<a href="{{ url_for('auth.register') }}">Criar uma conta</a>
+{% endblock %}
