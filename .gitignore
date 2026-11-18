@@ -19,3 +19,28 @@ __pycache__/
 # Sistema operacional
 .DS_Store
 Thumbs.db
+
+# Ambiente virtual
+.venv/
+venv/
+
+# Variáveis de ambiente
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Testes
+.pytest_cache/
+.coverage
+
+# PyCharm
+.idea/
+
+# Banco de dados local
+instance/*.db
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
