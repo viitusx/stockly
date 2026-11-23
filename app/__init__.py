@@ -1,5 +1,5 @@
-from pathlib import Path
 
+from pathlib import Path
 from flask import Flask
 
 from config import Config
@@ -21,9 +21,8 @@ def create_app():
     migrate.init_app(app, db)
     login_manager.init_app(app)
     bcrypt.init_app(app)
-    login_manager.login_view = "auth.login"
 
-    # Configurações do Flask-Login
+    # Configuração do Flask-Login
     login_manager.login_view = "auth.login"
 
     # Importação dos modelos
@@ -41,10 +40,13 @@ def create_app():
 
     # Registro das rotas
     from app.routes.main import main_bp
-    app.register_blueprint(main_bp)
-
     from app.routes.auth import auth_bp
+    from app.routes.categories import categories_bp
+    from app.routes.suppliers import suppliers_bp
 
+    app.register_blueprint(categories_bp)
+    app.register_blueprint(main_bp)
     app.register_blueprint(auth_bp)
+    app.register_blueprint(suppliers_bp)
 
     return app
