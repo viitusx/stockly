@@ -1,10 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}Editar Fornecedor | Stockly{% endblock %}
+
+{% block content %}
+
+<div class="mb-4">
+    <h2 class="fw-bold">Editar fornecedor</h2>
+    <p class="text-muted">
+        Atualize as informações do fornecedor.
+    </p>
+</div>
+
+<div class="card shadow-sm border-0">
+    <div class="card-body p-4">
+
+        <form method="POST">
+
+            <div class="mb-3">
+                <label for="name" class="form-label">
+                    Nome do fornecedor *
+                </label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    value="{{ supplier.name }}"
+                    required
+                >
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    value="{{ supplier.email or '' }}"
+                >
+            </div>
+
+            <div class="mb-3">
+                <label for="phone" class="form-label">
+                    Telefone
+                </label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    id="phone"
+                    name="phone"
+                    value="{{ supplier.phone or '' }}"
+                >
+            </div>
+
+            <div class="mb-4">
+                <label for="document" class="form-label">
+                    CPF ou CNPJ
+                </label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    id="document"
+                    name="document"
+                    value="{{ supplier.document or '' }}"
+                >
+            </div>
+
+            <div class="d-flex gap-2">
+
+                <button type="submit" class="btn btn-primary">
+                    Salvar alterações
+                </button>
+
+                <a href="{{ url_for('suppliers.list_suppliers') }}"
+                   class="btn btn-outline-secondary">
+                    Cancelar
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

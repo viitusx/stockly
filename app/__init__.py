@@ -43,10 +43,15 @@ def create_app():
     from app.routes.auth import auth_bp
     from app.routes.categories import categories_bp
     from app.routes.suppliers import suppliers_bp
+    from app.routes.products import products_bpgit add .
+    from app.models.stock_movement import StockMovement
+    from app.register_blueprint(movements_bp)
 
     app.register_blueprint(categories_bp)
     app.register_blueprint(main_bp)
     app.register_blueprint(auth_bp)
     app.register_blueprint(suppliers_bp)
+    app.register_blueprint(products_bp)
+    app.register_blueprint(movements_bp)
 
     return app
