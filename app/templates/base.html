@@ -33,6 +33,11 @@
                         Dashboard
                     </a>
 
+                    <a href="{{ url_for('movements.list_movements') }}"
+                       class="btn btn-outline-info btn-sm">
+                        Movimentações
+                    </a>
+
                     <a href="{{ url_for('auth.logout') }}"
                        class="btn btn-outline-light btn-sm">
                         Sair
@@ -66,3 +71,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+</html>
